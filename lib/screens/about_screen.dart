@@ -1,7 +1,28 @@
+import 'package:angkordev/controllers/post_controller.dart';
 import 'package:angkordev/widgets/global_drawer_widget.dart';
 import 'package:flutter/material.dart';
 
-class AboutScreen extends StatelessWidget {
+import '../models/post_model.dart';
+
+class AboutScreen extends StatefulWidget {
+  @override
+  _AboutScreenState createState() => _AboutScreenState();
+}
+
+class _AboutScreenState extends State<AboutScreen> {
+  List<PostModel> posts = [];
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    PostController.fetchPosts().then((postResponse) {
+      setState(() {
+        posts = postResponse;
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -10,7 +31,17 @@ class AboutScreen extends StatelessWidget {
       ),
       body: Container(
         child: Center(
-          child: Text('About Screen'),
+          child: Column(
+            children: <Widget>[
+              Text('About Screen'),
+              IconButton(
+                icon: Icon(Icons.file_download),
+                onPressed: () {
+                  PostController.fetchPosts();
+                },
+              )
+            ],
+          ),
         ),
       ),
       drawer: GlobalDrawerWidget(),

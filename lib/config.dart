@@ -59,4 +59,7 @@ class Config {
       '25th, March 2020',
     ),
   ];
+
+  static final String postsApiUrl =
+      "https://khmerevents.news/wp-json/wp/v2/posts";
 }

@@ -1,6 +1,6 @@
 import 'package:angkordev/screens/about_screen.dart';
 import 'package:angkordev/screens/contact_screen.dart';
-import 'package:angkordev/screens/favorite_screen.dart';
+import 'package:angkordev/screens/favourite_screen.dart';
 import 'package:angkordev/widgets/angkordev_list_tile_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -99,7 +99,7 @@ class GlobalDrawerWidget extends StatelessWidget {
               Navigator.push(
                 context,
                 MaterialPageRoute(
-                  builder: (context) => FavoriteScreen(),
+                  builder: (context) => FavouriteScreen(),
                 ),
               );
             },

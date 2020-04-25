@@ -12,10 +12,8 @@ class PostScreen extends StatefulWidget {
 class _PostScreenState extends State<PostScreen> {
   //Declare Variable/State
   PostModel post = PostModel(
-    userId: 1,
     id: 2,
     title: 'Hello',
-    description: 'Welcome',
   );
 
   // Trigger on screen started
@@ -40,10 +38,8 @@ class _PostScreenState extends State<PostScreen> {
                   fetchSinglePost();
                 },
               ),
-              Text("userId: " + post.userId.toString()),
               Text("id: " + post.id.toString()),
               Text("title: " + post.title),
-              Text("body: " + post.description),
             ],
           ),
         ),
